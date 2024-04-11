@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>CRUD API REST FETCH</title>
+</head>
+<body>
+    <h1>CRUD API REST FETCH</h1>
+    <section id="crud">
+        <article>
+            <h2 class="crud-title">Agregar Usuario</h2>
+            <form class="crud-form">
+                <input type="text" name="name" placeholder="Nombre" required>
+                <br>
+                <input type="text" name="surname"  placeholder="Apellido" required>
+                <br>
+                <input type="text" name="age" placeholder="Edad" required>
+                <br>
+                <input type="email" name="email" placeholder="Correo" required>
+                <br>
+                <input type="text" name="job" placeholder="Trabajo actual">
+                <br>
+                <textarea type="text" name="comment" placeholder="Comentar..." cols="50" rows="10"></textarea>
+                <br>
+                <input type="submit" id="submit" value="Enviar">
+                <!-- en este input le pasamos la accion segun el verbo -->
+                <input type="hidden" name="id">
+            </form>
+        </article>
+        <article>
+            <h2>Ver usuarios</h2>
+            <table class="crud-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Edad</th>
+                        <th>Correo</th>
+                        <th>Trabajo</th>
+                        <th>Comentario</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </article>
+    </section>
+    <template id="crud-template">
+        <tr>
+            <td class="nombre"></td>
+            <td class="apellido"></td>
+            <td class="edad"></td>
+            <td class="correo"></td>
+            <td class="trabajo"></td>
+            <td class="comentario"></td>
+            <td>
+                <button class="editar"></button>
+                <button class="eliminar"></button>
+            </td>
+         </tr>
+    </template>
+    <script src="./crud_fetch.js"></script>
+</body>
+</html>
