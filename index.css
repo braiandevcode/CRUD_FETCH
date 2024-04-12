@@ -1,30 +1,69 @@
 :root{
-    --bg-error:red;
+    --bg-error:#f60f0ffa;
     --color-error: yellow;
+    --text-color:white;
+    --text-title-main:#aa052e;
 }
-*{
+*,
+::after,
+::before{
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
+
 body{
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100vh;
     font-family: sans-serif;
 }
 h1{
     text-align: center;
-}
-h2{
-  margin-left: 1rem;
+    color:var(--text-title-main);
+    text-decoration: underline;
+    text-shadow: -3px 0px 8px currentColor;
+    margin-bottom: 3rem;
 }
 
-.error{
-    background-color: var(--bg-error);
+/*ESTILOS GLOBALES */
+.crud__article-form{
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* ESTILO PARA MENSAJE DE ERROR */
+.container-error{
+   width: 100%;
+   padding: 3rem;
+   background-color:var(--bg-error);
+
+   position: fixed;
+   left: 0;
+   right:0;
+   top: 0;
+   bottom: 0;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+
+.container-error__text{
     color: var(--color-error);
-    width: 50%;
     padding: 1rem 2rem;
     font-weight: 900;
 }
 
+.container-error span{
+    text-align: center;
+    color: var(--text-color);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
 
 .cancelar{
     display: inline-block;
@@ -32,3 +71,202 @@ h2{
 .cancel--hidden{
     display: none;
 }
+
+/***********ESTILOS SECTION*************** */
+.crud{
+    width: 100%;
+}
+
+
+/* ARTICULO FORMULARIO */
+.crud-form{
+    width: 100%;
+    text-align: center;
+}
+
+.crud__article-form{
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column-reverse;
+
+    background-color: #022131;
+    gap: 2rem;
+    border-radius: 3px;
+    box-shadow: -3px 0 8px #121221;
+    margin-bottom: 3rem ;
+}
+
+.crud__article-form div{
+    width: 100%;
+    text-align: center;
+}
+
+.subtitle{
+   padding: .5rem 0;
+   text-align: center;
+   text-transform: uppercase;
+   background-color: var(--text-title-main);
+   color: var(--text-color);
+}
+
+
+.crud-form__input{
+    margin-bottom: 1rem;
+    padding: 1rem 0.3rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color:transparent;
+    color: #ffffff;
+}
+
+.crud-form__input:focus{
+    border-bottom: thin solid currentColor;
+    background-color: #12122124;
+}
+
+.crud-form__input::placeholder{
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.image-port{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+/* BOTONES FORMULARIO */
+.crud-form-butons{
+    display: flex;
+    flex-direction: column;
+    row-gap: .6rem;
+}
+.cancelar,
+[type="submit"]{
+   width: 100%;
+   padding: 1.3rem;
+   border: none;
+   font-weight: 900;
+   color: var(--text-color);
+   border-radius: .3rem;
+   background-color: rgb(19, 117, 9);
+   opacity: .5;
+   cursor: pointer;
+
+   transition: opacity .5s ease-in-out;
+}
+.cancelar{
+    background-color: var(--text-title-main);
+}
+
+.cancelar:hover,
+[type="submit"]:hover{
+    opacity: 1;
+}
+/* LINEA DIVISORA DEL FORMULARIO */
+.divide {
+    border-left: none;
+    border-top: 2px solid var(--text-color);
+    box-shadow: -3px 0 10px var(--text-color);
+}
+
+/***********ARTICULO DE TABLA******************* */
+.crud-table{
+  margin: 0 auto;
+  width: inherit;
+  padding-bottom: 10rem;
+}
+
+
+.crud__article-table,
+.crud__article-table .subtitle{
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*****************BOTONES REGISTROS*******************/
+.register{
+    padding: 2rem;
+    color: var(--text-color);
+    height: 100%;
+}
+th{
+    background-color: #cd350a;
+    padding: .8rem;
+    color: var(--text-color);
+}
+
+tr{
+    text-align: center;
+    margin-bottom: .3rem;
+}
+td button{
+    width: 100%;
+    padding: .8rem;
+    border: none;
+    font-weight: 900;
+    color: var(--text-color);
+    border-radius: .3rem;
+    background-color: rgb(194, 30, 8);
+    cursor: pointer;
+    
+    transition: opacity .5s ease-in-out;
+}
+td button:first-child{
+    width: 100%;
+    padding: .8rem;
+    border: none;
+    font-weight: 900;
+    border-radius: .3rem;
+    background-color: rgb(19, 117, 9);
+    cursor: pointer;
+    
+    transition: opacity .5s ease-in-out;
+}
+
+td:last-child{
+    width: 100%;
+    display: flex;
+    column-gap: .5rem;
+}
+
+.nombre,
+.apellido,
+.edad,
+.correo,
+.trabajo,
+.comentario,
+.acciones{
+   padding: .4rem;
+   background-color: #022131;
+   font-weight: 700;
+}   
+.acciones{
+    background-color: var(--text-title-main);
+}
+
+
+/*************MEDIAQUERYS************************* */
+@media screen and (min-width:968px) {
+    .divide{
+       display: none;
+    }
+    .crud__article-form{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .crud__article-form div:first-child{
+        border-right: 2px solid var(--text-color);
+        box-shadow: 0 2px 10px currentColor;
+        padding-right: 1.3rem;
+    }
+
+}
+
