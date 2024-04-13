@@ -20,9 +20,6 @@ export const getAllUsers = async (url, $table, $template,$fragment) => {
         messageErrorApiJsonServer(`Error ${500}: ${serverError}`);
       } else if (err.status >= 400 && err.status < 500) {
         messageErrorApiJsonServer(`Error ${err.status}: ${message}`);
-      }else{
-        let serverError = "Ocurrio un error inesperado.";
-        messageErrorApiJsonServer(`Error: ${serverError}`);
       }
     }
   };
