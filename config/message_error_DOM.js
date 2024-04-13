@@ -1,6 +1,5 @@
 const d = document;
-const $fragment = d.createDocumentFragment(),
-$table = d.querySelector(".crud-table");
+const $fragment = d.createDocumentFragment();
 
 //*****************************FUNCIÓN SUCCESS API JSON-SERVER****************//
 export const messageErrorApiJsonServer =(err)=>{

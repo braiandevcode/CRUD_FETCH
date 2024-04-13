@@ -5,9 +5,9 @@ const d = document;
 
 // IDENTIFICADORES HTML
 const $cancelar = d.createElement("BUTTON"),
-  $table = d.querySelector(".crud-table"),
-  $form = d.querySelector(".crud-form"),
-  $title = d.querySelector(".crud-title"),
+  $table = d.querySelector(".crud__table"),
+  $form = d.querySelector(".crud__form"),
+  $title = d.querySelector(".crud__title"),
   $submit = d.getElementById("submit"),
   $fragment = d.createDocumentFragment(),
   inputName = $form.querySelectorAll("[name]"),
@@ -18,7 +18,7 @@ let url = `http://localhost:${PORT}/usuarios`;
 
 //****************EVENTO DE CARGA DE PAGINA*************
 d.addEventListener("DOMContentLoaded", async  ()=>{
-    $cancelar.classList.add("cancel--hidden");
+    $cancelar.classList.add("crud__button", "crud__form-cancel--hidden");
     $cancelar.textContent = "Cancelar";
     getAllUsers(url, $table, $template, $fragment);
 });

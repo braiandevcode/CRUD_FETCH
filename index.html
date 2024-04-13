@@ -1,63 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./index.css" />
     <title>CRUD API REST FETCH</title>
-</head>
+  </head>
 <body>
     <h1>CRUD API REST FETCH</h1>
+    <!-- SECCION DATOS USUARIOS -->
     <section id="crud" class="crud">
-        <article class="crud__article-form">
-            <div>
-                <h2 class="crud-title subtitle">Agregar Usuario</h2>
-                <form class="crud-form">
-                    <input type="text" name="name" placeholder="Nombre" class="crud-form__input" autofocus required>
-                    <input type="text" name="surname"  placeholder="Apellido" class="crud-form__input" required>
-                    <input type="text" name="age" placeholder="Edad" class="crud-form__input" required>
-                    <input type="email" name="email" placeholder="Correo" class="crud-form__input" required>
-                   
-                    <div class="crud-form-butons">
-                        <input type="submit" id="submit" value="Enviar">
-                        <input type="hidden" name="id">
-                    </div>
-                </form>
+      <!-- FORMULARIO -->
+      <article class="crud__form-article">
+        <div>
+          <h2 class="crud__title subtitle">Agregar Nuevo Usuario</h2>
+          <form class="crud__form">
+            <!-- Aquí, cada input es un elemento del bloque 'crud' -->
+            <input type="text" name="name" placeholder="Nombre" class="crud__input" autofocus required />
+            <input type="text" name="surname" placeholder="Apellido" class="crud__input" required />
+            <input type="text" name="age" placeholder="Edad" class="crud__input" required />
+            <input type="email" name="email" placeholder="Correo" class="crud__input" required />
+            <div class="crud__form-buttons">
+              <input type="submit" id="submit" value="Enviar"  class="crud__button crud__form-submit"/>
+              <input type="hidden" name="id" />
             </div>
-            <div class="divide"></div>
-            <div>
-                <!-- image -->
-                <img src="img/port.jpg" alt="imagen de crud" class="image-port">
+          </form>
+        </div>
+        <!-- <div class="divide"></div> -->
+        <div>
+          <img src="img/port.jpg" alt="imagen de crud" class="crud__image" />
+        </div>
+      </article>
+      <!-- TABLA -->
+      <article class="crud__table-article">
+        <h2 class="crud__table-title subtitle">Tabla de Usuarios</h2>
+        <div role="table" class="crud__table">
+          <div role="heading" class="crud__table-heading">
+            <div class="crud__table-heading-row">
+              <!-- Aquí, cada div es un elemento del bloque 'crud' -->
+              <div class="crud__table-heading-cell">Nombre</div>
+              <div class="crud__table-heading-cell">Apellido</div>
+              <div class="crud__table-heading-cell">Edad</div>
+              <div class="crud__table-heading-cell">Correo</div>
+              <div class="crud__table-heading-cell">Acciones</div>
             </div>
-        </article>
-        <article class="crud__article-table">
-            <h2 class="subtitle">Usuarios:</h2>
-                <table class="crud-table">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Edad</th>
-                            <th>Correo</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody class="register"></tbody>
-                </table>
-        </article>
+          </div>
+          <div class="crud__table-row"></div>
+        </div>
+      </article>
     </section>
     <template id="crud-template">
-        <tr>
-            <td class="nombre"></td>
-            <td class="apellido"></td>
-            <td class="edad"></td>
-            <td class="correo"></td>
-            <td>
-                <button class="editar"></button>
-                <button class="eliminar"></button>
-            </td>
-         </tr>
+      <div class="crud__table-data-row">
+        <!-- Aquí, cada div es un elemento del bloque 'crud' -->
+        <div class="crud__table-data-cell nombre"></div>
+        <div class="crud__table-data-cell apellido"></div>
+        <div class="crud__table-data-cell edad"></div>
+        <div class="crud__table-data-cell correo"></div>
+        <div class="crud__table-data-cell actions">
+          <button class="crud__button editar"><i class="bi bi-pencil-fill"></i></button>
+          <button class="crud__button eliminar"><i class="bi bi-trash3-fill"></i></button>
+        </div>
+      </div>
     </template>
     <script src="./index.js" type="module"></script>
 </body>
-</html>
+  

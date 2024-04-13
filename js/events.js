@@ -23,10 +23,10 @@ export const eventClick = ($cancelar, $table, $title, $submit, inputName, $fragm
   // ***EVENTO DE CLICK*******
   //**evento para mostrar los valores en los input, para eliminar un usuario y modificaciones de interacción de usuario en DOM**
   d.addEventListener("click", async (e) => {
-    if (e.target.matches(".editar")) {
+    if (e.target.matches(".editar") || e.target.matches(".bi-pencil-fill")) {
       e.target.disabled = true;
       e.preventDefault();
-      $cancelar.classList.replace("cancel--hidden", "cancelar");
+      $cancelar.classList.replace("crud__form-cancel--hidden", "crud__form-cancel");
       $fragment.appendChild($cancelar);
       $submit.after($fragment);
 
@@ -42,7 +42,7 @@ export const eventClick = ($cancelar, $table, $title, $submit, inputName, $fragm
       });
     }
 
-    if (e.target.matches(".eliminar")) {
+    if (e.target.matches(".eliminar") || e.target.matches(".bi-trash3-fill")) {
       let isConfirm = confirm(
         `¿Estas seguro de querer eliminar los datos del registro: ${e.target.dataset.id}?.`
       );
@@ -52,7 +52,7 @@ export const eventClick = ($cancelar, $table, $title, $submit, inputName, $fragm
       }
     }
 
-    if (e.target.matches(".cancelar")) {
+    if (e.target.matches(".crud__form-cancel")) {
       e.preventDefault();
       let $BUTTON__EDIT = $table.querySelector("button[disabled]");
       $title.textContent = "Agregar usuario";
@@ -60,8 +60,11 @@ export const eventClick = ($cancelar, $table, $title, $submit, inputName, $fragm
       inputName.forEach((input, i) => {
         input.value = "";
       });
-      $cancelar.classList.replace("cancelar", "cancel--hidden");
-      $BUTTON__EDIT.disabled = false;
+      $cancelar.classList.replace("crud__form-cancel", "crud__form-cancel--hidden");
+      
+      if($BUTTON__EDIT != null){
+        $BUTTON__EDIT.disabled = false;
+      }
     }
   });
 };

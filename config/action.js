@@ -15,11 +15,14 @@ export const getAllUsers = async (url, $table, $template,$fragment) => {
       return successApiJsonServer(dataJson, $table, $template, $fragment);
     } catch (err) {
       let message = err.statusText || "Not Found";
-      if (!err.status) {
+      if (err.status >= 500 && err.status < 600) {
         let serverError = "Error de servidor";
         messageErrorApiJsonServer(`Error ${500}: ${serverError}`);
-      } else if (err.status > 400 && err.status < 500) {
+      } else if (err.status >= 400 && err.status < 500) {
         messageErrorApiJsonServer(`Error ${err.status}: ${message}`);
+      }else{
+        let serverError = "Ocurrio un error inesperado.";
+        messageErrorApiJsonServer(`Error: ${serverError}`);
       }
     }
   };

@@ -8,14 +8,12 @@ const d = document;
       // creamos nuevo objeto con la copia que excluye el id
       const data = { ...resto };
       // recorremos los td dentro del template
-      $template.querySelectorAll("td").forEach((td, i) => {
+      $template.firstElementChild.querySelectorAll("div").forEach((div, i) => {
         let value = Object.values(data)[i];
         // evaluamos para acceder a los botones
-        if (td.children.length > 0) {
-          let butonEdit = td.querySelector(".editar");
-          let buttonDelete = td.querySelector(".eliminar");
-          butonEdit.textContent = "Editar";
-          buttonDelete.textContent = "Eliminar";
+        if (div.children.length > 0) {
+          let butonEdit = div.querySelector(".editar i");
+          let buttonDelete = div.querySelector(".eliminar i");
           butonEdit.dataset.id = el.id;
           butonEdit.dataset.name = el.name.toLowerCase().trim();
           butonEdit.dataset.surname = el.surname.toLowerCase().trim();
@@ -25,9 +23,9 @@ const d = document;
         } else {
           // asignamos el valor correspondiente al td
           if (i === 0 || i === 1) {
-            td.textContent =value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+            div.textContent =value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
           } else {
-            td.textContent = value.toLowerCase();
+            div.textContent = value.toLowerCase();
           }
         }
       });
@@ -35,5 +33,5 @@ const d = document;
       $fragment.appendChild($clone);
     });
   
-    $table.querySelector("tbody").appendChild($fragment);
+    $table.querySelector(".crud__table-row").appendChild($fragment);
   };
