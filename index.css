@@ -6,7 +6,7 @@
     --color-text-subtitle-main: #FFF;
     --color-text-section-crud: #FFF;
     --bg-color-section-crud: #089855;
-    --bg-color-form-crud: #100f0fed;
+    --bg-color-form-crud: #1f074a5d;
     --color-text-form: #1777e5;
     --bg-color-table-crud: #089855;
     --color-text-table: #FFF;
@@ -33,6 +33,7 @@ body {
     height: 100vh;
     font-family: sans-serif;
     color: var(--bg-color-buttons);
+    background: var(--bg-color-main);
     letter-spacing: 1px;
 }
 
@@ -125,7 +126,7 @@ body,
 
 .crud__form-submit,
 .crud__form-cancel,
-.crud__btn{
+.crud__btn {
     color: var(--color-buttons);
     cursor: pointer;
     border-radius: var(--border-radius);
@@ -163,7 +164,7 @@ body,
 .crud__form {
     padding: 4rem 1.5rem;
     background: var(--bg-color-form-crud);
-    border: 5px solid var(--color-text-form);
+    box-shadow: -3px -3px 8px currentColor, 3px 3px 8px currentColor;
     border-radius: var(--border-radius);
     row-gap: var(--row-gap);
     transition: all .6s ease-in;
@@ -194,11 +195,20 @@ body,
 }
 
 .crud__input::placeholder {
-    color: var(--color-text-form);
+    color: var(--bg-color-buttons);
 }
+
 
 .crud__input:focus {
     border-bottom: 2px solid var(--color-text-form);
+}
+
+.crud__input.crud__input--valid:focus {
+  border-bottom: 2px solid green;
+}
+
+.crud__input.crud__input--invalid:focus {
+  border-bottom: 2px solid red;
 }
 
 .crud__form-buttons {
@@ -207,7 +217,7 @@ body,
 }
 
 .crud__form-submit {
-    background:var(--bg-color-buttons);
+    background: var(--bg-color-buttons);
 }
 
 .crud__form-cancel,

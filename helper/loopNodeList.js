@@ -6,12 +6,15 @@ const changeBorder = (input, isValid = null) => {
   const valid = validateInput(input);
 
   if (!valid) {
-    input.style.borderColor = "red";
+    input.classList.add("crud__input--invalid");
+    input.classList.remove("crud__input--valid");
+
     if (isValid !== null) {
       isValid = false;
     }
   } else {
-    input.style.borderColor = "green";
+    input.classList.add("crud__input--valid");
+    input.classList.remove("crud__input--invalid");
   }
   return isValid;
 };

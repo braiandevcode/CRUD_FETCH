@@ -21,5 +21,5 @@ d.addEventListener("DOMContentLoaded", async () => {
   await getAllUsers(url, $table, $template, $fragment);
   eventClick($table, $title, $submit, $inputName, $fragment, url);
   eventSubmit($form, url);
-  eventChange($form);
 });
+eventChange($form);
