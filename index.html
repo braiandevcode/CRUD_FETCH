@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./index.css" />
-    <title>CRUD API REST FETCH</title>
+    <title>crud</title>
   </head>
 <body>
-    <h1>CRUD API REST FETCH</h1>
+    <h1>CRUD API REST</h1>
     <!-- SECCION DATOS USUARIOS -->
     <section id="crud" class="crud">
       <!-- FORMULARIO -->
@@ -22,9 +22,9 @@
             <input type="text" name="age" placeholder="Edad" class="crud__input" required />
             <input type="email" name="email" placeholder="Correo" class="crud__input" required />
             <div class="crud__form-buttons">
-              <input type="submit" id="submit" value="Enviar"  class="crud__button crud__form-submit"/>
-              <input type="hidden" name="id" />
+              <input type="submit" id="submit" value="Enviar"  class="crud__form-submit"/>
             </div>
+            <input type="hidden" name="id" />
           </form>
         </div>
         <!-- <div class="divide"></div> -->
@@ -58,8 +58,8 @@
         <div class="crud__table-data-cell edad"></div>
         <div class="crud__table-data-cell correo"></div>
         <div class="crud__table-data-cell actions">
-          <button class="crud__button editar"><i class="bi bi-pencil-fill"></i></button>
-          <button class="crud__button eliminar"><i class="bi bi-trash3-fill"></i></button>
+          <button class="crud__btn editar"><i class="bi bi-pencil-fill"></i></button>
+          <button class="crud__btn eliminar"><i class="bi bi-trash3-fill"></i></button>
         </div>
       </div>
     </template>

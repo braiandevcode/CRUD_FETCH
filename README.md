@@ -1,6 +1,11 @@
 # Mi Proyecto
 
-Este es mi proyecto de práctica de CRUD con Fetch.
+Este es un proyecto de práctica de CRUD con peticiones AJAX especialemente utilizando la API.
+
+![Captura 1](./img/cap1.png)
+![Captura 2](./img/cap2.png)
+![Captura 3](./img/cap3.png)
+
 
 ## Configuración del servidor
 
