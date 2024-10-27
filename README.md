@@ -2,10 +2,10 @@
 
 Este es un proyecto de práctica de CRUD con peticiones AJAX especialemente utilizando la API.
 
-![Captura 1](./img/cap1.png)
-![Captura 2](./img/cap2.png)
-![Captura 3](./img/cap3.png)
 
+<img src="./img/cap1.png" alt="Captura 1" width="300"/>
+<img src="./img/cap2.png" alt="Captura 2" width="300"/>
+<img src="./img/cap3.png" alt="Captura 3" width="300"/>
 
 ## Configuración del servidor
 
